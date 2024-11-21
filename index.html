@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css"> <!--CSS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Amatic+SC:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="contentWrapper">
+        <h1> Goutham's Weather App </h1>
+    
+        <input type="text" id="locationInput" placeholder="Enter Your Location"> <!--Where user will enter location-->
+        
+        <button id="searchButton">Search</button> <!--Button will trigger the search for weather data -->
+
+<!--This is where the weather information will be displayed-->
+        <div id="weatherInfo" class="weather-card">
+            <h2 id="cityName"></h2>
+            <p id="placeholderText"> "Weather forecast for tonight:<br> Dark." <br> - George Carlin </p>
+            <div class="temperature">
+                <p id="temperature"></p>
+                <p id="maxTemp"></p>
+                <p id="minTemp"></p>
+                <p id="feelsLike"></p>
+            </div>
+            <div class="misc" >
+            <p id="weatherDescription"></p>
+            <p id="humidity"></p>
+            <p id="windSpeed"></p>
+            </div>
+            
+            <span id="weatherEmoji" style="font-size: 3em; margin-top: 20px"></span>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!--JS-->
+
+</body>
+</html>

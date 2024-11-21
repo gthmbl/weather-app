@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    overflow-x: hidden; /* Prevent horizontal scrolling on small screens */
+}
+
+#placeholderText {
+    font-style: italic;
+    font-size: 45px;
+}
+
+#contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5%; /* Use percentage for padding for responsiveness */
+    border-radius: 15px;
+    box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24); 
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    max-width: 90%; /* Restrict max width */
+    width: 400px; /* Base width for larger screens */
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+p { 
+    font-size: larger;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+.weather-card {
+    padding: 5%; /* Use percentage padding for scaling */
+    border-radius: 15px;
+    width: 25vw; /* Make card width relative to viewport width */
+    max-width: 100px; /* Limit the maximum width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#weatherEmoji {
+    font-size: 5em;
+    transform: scale(1); /* Ensure the emoji doesn't scale beyond its set font size */
+    margin-top: auto;
+    padding-top: 20px;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#weatherInfo {
+    min-height: 50vh;
+    width: 90%; /* Make width responsive */
+    max-width: 300px; /* Restrict maximum width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    border-color: white;
+    box-sizing: border-box;
+}
+
+input[type="text"], button {
+    text-align: center;
+    background-color: transparent;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 30px;
+    color: white;
+    box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24);
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 80%; /* Ensure input/button are responsive */
+    max-width: 400px; /* Set a maximum width */
+}
+
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:active { 
+    transform: scale(0.98); 
+    box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24); 
+}
+
+/* Background styles for each weather condition */
+.sunny {
+    background: linear-gradient(135deg, #f9d423, #ff4e50);
+}
+
+.cloudy {
+    background: linear-gradient(135deg, #d7d2cc, #304352);
+}
+
+.rainy {
+    background: linear-gradient(135deg, #3a7bd5, #3a6073);
+}
+
+.clear-night {
+    background: linear-gradient(135deg, #1a2980, #26d0ce);
+}
+
+/* Add media queries for smaller screen adjustments */
+@media (max-width: 600px) {
+    #contentWrapper {
+        padding: 5%;
+        width: 90%;
+    }
+    .weather-card {
+        width: 60%; /* Adjust card width for smaller screens */
+        max-width: 100px;
+    }
+    input[type="text"], button {
+        font-size: 20px; /* Adjust input/button font size for smaller screens */
+    }
+}

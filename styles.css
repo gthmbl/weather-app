@@ -2,17 +2,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     min-height: 100vh;
     margin: 0;
     font-family: "Amatic SC", sans-serif;
     font-weight: 700;
     font-style: normal;
-    overflow-x: hidden; /* Prevent horizontal scrolling on small screens */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 #placeholderText {
     font-style: italic;
-    font-size: 45px;
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Dynamically adjust font size */
 }
 
 #contentWrapper {
@@ -20,29 +21,29 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 5%; /* Use percentage for padding for responsiveness */
+    padding: 5%;
     border-radius: 15px;
-    box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24); 
+    box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24);
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    max-width: 90%; /* Restrict max width */
-    width: 400px; /* Base width for larger screens */
-    box-sizing: border-box; /* Include padding in the width */
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box; /* Include padding in width */
 }
 
-p { 
-    font-size: larger;
+p {
+    font-size: clamp(1rem, 3vw, 1.5rem); /* Adjust font size for readability */
 }
 
 h1 {
-    font-size: 45px;
+    font-size: clamp(2rem, 5vw, 3rem); /* Dynamically adjust size */
 }
 
 .weather-card {
-    padding: 5%; /* Use percentage padding for scaling */
+    padding: 5%;
     border-radius: 15px;
-    width: 25vw; /* Make card width relative to viewport width */
-    max-width: 100px; /* Limit the maximum width */
+    width: 80%; /* Responsive width */
+    max-width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +52,7 @@ h1 {
 
 #weatherEmoji {
     font-size: 5em;
-    transform: scale(1); /* Ensure the emoji doesn't scale beyond its set font size */
+    transform: scale(1);
     margin-top: auto;
     padding-top: 20px;
     line-height: 1;
@@ -60,8 +61,8 @@ h1 {
 
 #weatherInfo {
     min-height: 50vh;
-    width: 90%; /* Make width responsive */
-    max-width: 300px; /* Restrict maximum width */
+    width: 90%;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,14 +80,14 @@ input[type="text"], button {
     border-radius: 10px;
     border: 1px solid #ccc;
     outline: none;
-    font-size: 30px;
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Adjust size dynamically */
     color: white;
     box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24);
     font-family: "Amatic SC", sans-serif;
     font-weight: 400;
     font-style: normal;
-    width: 80%; /* Ensure input/button are responsive */
-    max-width: 400px; /* Set a maximum width */
+    width: 100%;
+    max-width: 400px;
 }
 
 button {
@@ -97,9 +98,9 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:active { 
-    transform: scale(0.98); 
-    box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24); 
+button:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24);
 }
 
 /* Background styles for each weather condition */
@@ -123,13 +124,25 @@ button:active {
 @media (max-width: 600px) {
     #contentWrapper {
         padding: 5%;
-        width: 90%;
+        width: 95%;
     }
     .weather-card {
-        width: 60%; /* Adjust card width for smaller screens */
-        max-width: 100px;
+        width: 90%; /* Adjust card width for smaller screens */
+        max-width: 250px;
     }
     input[type="text"], button {
-        font-size: 20px; /* Adjust input/button font size for smaller screens */
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        max-width: 90%; /* Align with container width */
+    }
+    #weatherInfo {
+        font-size: 1rem; /* Adjust font size */
+    }
+}
+
+/* Extra media query for very small screens */
+@media (max-width: 480px) {
+    #weatherInfo {
+        max-height: calc(100vh - 20%);
+        overflow-y: auto; /* Allow scrolling inside content */
     }
 }

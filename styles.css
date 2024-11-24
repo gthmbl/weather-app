@@ -13,7 +13,7 @@ body {
 
 #placeholderText {
     font-style: italic;
-    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Dynamically adjust font size */
+    font-size: clamp(2rem, 10vw, 4.5rem); /* Dynamically adjust font size */
 }
 
 #contentWrapper {

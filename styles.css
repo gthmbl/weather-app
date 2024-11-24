@@ -24,7 +24,7 @@ body {
     padding: 5%;
     border-radius: 15px;
     box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24);
-    background:linear-gradient(135deg, #2d9339, #db5c5c);
+    background: rgba(30, 46, 0, 0.5);
     color: white;
     width: 90%;
     max-width: 400px;
